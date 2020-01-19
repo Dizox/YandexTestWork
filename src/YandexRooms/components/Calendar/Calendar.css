@@ -1,0 +1,64 @@
+.calendar__header {
+  display: flex;
+}
+
+.selectDate {
+  width: 245px;
+  background: yellow;
+}
+
+.timeLine {
+  display: flex;
+  width: calc(100% - 245px);
+  justify-content: space-between;
+  margin: 0 25px;
+  background: rosybrown;
+}
+
+.timeLine__item {
+  position: relative;
+  margin: 8px -20px;
+  width: 40px;
+  background: blueviolet;
+  text-align: center;
+}
+
+.timeLine__item:first-child::after {
+  content: ':00';
+}
+
+.timeLine__item::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 1px;
+  height: 90vh;
+  background: black;
+}
+
+.row {
+  display: flex;
+  margin: 15px 0;
+}
+
+.row__aside {
+  width: 245px;
+  background: khaki;
+}
+
+.row__main {
+  width: calc(100% - 245px);
+  height: 28px;
+  margin: 0 25px;
+  background: #D5DFE9;
+  position: relative;
+}
+
+.row__event {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #99A9B9;
+}

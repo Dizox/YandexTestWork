@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Header } from "./YandexRooms/components/Header/Header";
+import { Main } from "./YandexRooms/components/Main/Main";
+import { Calendar } from "./YandexRooms/components/Calendar/Calendar";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header/>
+        <Switch>
+          <Route path="/add">
+            <Main/>
+          </Route>
+          <Route path="/">
+            <Calendar/>
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
-export default App;
+// https://reacttraining.com/react-router/web/guides/quick-start
